@@ -1,0 +1,62 @@
+/*列表页的秒杀模块开始*/
+.nav {
+	/*因为文字是底端对齐,所以右侧文字需要把行高偏大,导致浮动的盒子也偏大了,超出了nav的范围,所以要把超出部分隐藏起来*/
+	overflow: hidden;
+}
+.sk {
+	position: absolute;
+	left: 185px;
+	top: 40px;
+	padding: 3px 0 3px 14px;
+	border-left: 1px solid #b1191a;
+}
+/*列表页的秒杀模块结束*/
+
+/*nav 导航栏模块开始*/
+.nav .sk_list a {
+	padding: 0 29px;
+	float: left;
+	font-size: 16px;
+	color: #000000;
+	line-height: 45px;
+	font-weight: 700;
+}
+.sk_con li {
+	float: left;
+	padding: 0 20px;
+	line-height: 49px;
+	font-size: 14px;
+}
+.sk_con li:last-child a::after{
+	content: '\e91e';
+	font-family: 'icomoon';
+	line-height: 45px;
+}
+/*nav 导航栏模块结束*/
+
+/*列表页主体sk_container 开始*/
+.sk_container {
+	width: 1200px;
+	overflow: hidden;
+}
+.sk_bd ul li {
+	overflow: hidden;
+	float: left;
+	margin: 10px 10px 0 0;
+	width: 292.5px;
+	height: 460px;
+	text-align: center;
+	/*消抖 不增加的话，鼠标经过就会增加1像素的边框，会突然变大产生抖动*/
+	border: 1px solid transparent; 
+}
+.sk_bd ul li:hover {
+	border: 1px solid #e12228;
+}
+.sk_bd ul li:nth-child(4n) {
+	margin-right: 0px;
+}
+.sk_bd ul li img {
+	width: 292px;
+	height: 460px;
+}
+/*列表页主体sk_container 结束*/
