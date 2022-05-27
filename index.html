@@ -24,6 +24,7 @@
         <script src="js/fullpage.min.js"></script>
         <script src="js/jaliswall.js"></script>
         <script src="js/index.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         <style>
             /* 轮播圆点颜色 */
             #fp-nav ul li a span {
@@ -40,6 +41,11 @@
             }
             body {
                 background-image: linear-gradient(#48f1d5, #fff, #ffa4a4);
+            }
+            .sec2_main_body_content_left span {
+            	color: #426696;
+            	margin-left: 30px;
+            	font-size: 16px;
             }
         </style>
     </head>
@@ -274,7 +280,13 @@
                         <div class="sec2_main_body_content hidden">
                             <div class="sec2_main_body_content_left">
                                 <p>💘</p>
-                                <p>太杂了，不知道说什么好！！！</p>
+                                <span id="busuanzi_container_site_pv">
+								 本站总访问量<span id="busuanzi_value_site_pv"></span>次
+								</span>
+								&nbsp;&nbsp;
+								<span id="busuanzi_container_site_uv">
+								  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+								</span>
                                 <p>💓</p>
                             </div>
                             <div class="sec2_main_body_content_right">
@@ -348,6 +360,7 @@
             <!--<div class="section sec5" id="section5">
                 <video src="./img/zwi.mp4" autoplay muted loop controls></video>
             </div>-->
+            
         </div>
         <!-- ------------------------------------------------- -->
         <!-- 官网提供的 axios 在线地址 -->
