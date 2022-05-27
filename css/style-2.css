@@ -19,6 +19,7 @@
     bottom: 30%;
     left: 20%;
 }
+
 .sec2_circle2 {
     background: white;
     background: linear-gradient(
@@ -104,6 +105,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .sec2_main_body_content_left p {
     flex: 1;
     display: flex;
@@ -128,4 +130,21 @@
     border-radius: 25px;
     transition: all 1s;
 }
+.sec2_main_body_content ul li{
+	float: left;
+	height: 250px;
+	background:rgba(150,150,150,.5);
+	margin: 5px;
+	
+}
+.sec2_main_body_content{
+	overflow: auto;
+}
+.sec2_main_body_content img {
+	height: 100%;
+}
+/*.sec2_main_body_content::-webkit-scrollbar {
+	display:none;
+}*/
+
 /* 个人图片 */
