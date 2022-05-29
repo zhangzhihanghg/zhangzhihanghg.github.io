@@ -109,7 +109,7 @@
 .sec2_main_body_content_left p {
     flex: 1;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center; 
     align-items: center;
     text-align: left;
     font-size: 16px;
