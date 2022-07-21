@@ -1,48 +1,55 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录页_login</title>
-    <link rel="stylesheet" href="login.css">
-    <script src="jquery.min.js"></script>
+    <title>01_引出生命周期</title>
+    <script src="/vue.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <h1>登录</h1>
-        <form action="">
-            <input type="text" class="tbx" placeholder="账号">
-            <input type="password" class="tbx" placeholder="密码">
-            <input class="sub" type="submit" value="提交">
-        </form>
-        <h4>大股东：朱宇航</h4>
+    <div id="root">
+        <!-- <h1 :style="{opacity:opacity}">欢迎学习vue</h1> -->
+        <!-- 上面代码可以简写为如下代码 -->
+        <h1 :style="{opacity}">欢迎学习vue</h1>
+        {{change()}}
     </div>
+
     <script>
-        //定义一个con绑定.container
-        var con = document.querySelector('.container');
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                opacity: 1
+            },
+            methods: {
+                change() {
+                    // 若用这个方法的话，浏览器
+                    setInterval(() => {
+                        vm.opacity -= 0.01;
+                        if (vm.opacity <= 0) {
+                            vm.opacity = 1;
+                        }
+                    }, 16)
+                }
+            },
+        })
 
-        //定义两个函数开关(门)
-        var isIn = true;   //鼠标进去的门，默认打开
-        var isOut = false; //鼠标出来的门，默认关闭
+        // 通过外部定时器实现(不推荐)
+        /*  setInterval(()=>{
+             vm.opacity -= 0.01;
+             if(vm.opacity <= 0){
+                 vm.opacity = 1;
+             }
+         },16); */
 
-        var span; //给未出生的元素取名字
 
-        //监听鼠标进去事件+进去的方法
-        con.addEventListener("mouseenter",(e)=>{
-            if(isIn){
-                //获取进入的鼠标位置
-                //生成元素的位置 = 进入点距离窗口的距离 - 父盒子距离窗口的距离
-                var inx = e.clientX - e.target.offsetLeft;
-                var iny = e.clientY - e.target.offsetTop;
+    </script>
+</body>
 
-                //创建一个span元素，并且给他对应的出生坐标
-                var el = document.createElement('span');
-                el.style.left = inx + 'px';
-                el.style.top = iny + 'px';
-                con.appendChild(el); //添加到父元素中
-
-                $('.container span').removeClass('out');
+</html>
                 $('.container span').addClass('in'); //添加进入动画
                 span = document.querySelector(".container span");
                 siIn = false; //关闭进来的门(不能使用进入的方法)
