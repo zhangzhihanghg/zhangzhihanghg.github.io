@@ -1,4 +1,4 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +32,7 @@
                         if (vm.opacity <= 0) {
                             vm.opacity = 1;
                         }
-                    }, 16)
+                    }, 5)
                 }
             },
         })
@@ -49,36 +49,4 @@
     </script>
 </body>
 
-</html>
-                $('.container span').addClass('in'); //添加进入动画
-                span = document.querySelector(".container span");
-                siIn = false; //关闭进来的门(不能使用进入的方法)
-                isOut = true; //打开出去的门(可以使用出去的方法)
-            }
-        })
-
-        //监听鼠标出去的事件+出来的方法
-        con.addEventListener("mouseleave",(e)=>{
-            if(isOut){
-                //获取进入的鼠标位置
-                //生成元素的位置 = 进入点距离窗口的距离 - 父盒子距离窗口的距离
-                var inx = e.clientX - e.target.offsetLeft;
-                var iny = e.clientY - e.target.offsetTop;
-
-                $('.container span').removeClass('in');
-                $('.container span').addClass('out'); //添加出去动画
-                $(".out").css('left',inx + 'px'); //添加出去坐标
-                $(".out").css('top',iny + 'px');
-
-                
-                isOut = false; //关闭出去的门(不能使用出去的方法)
-                // 当动画结束后在删除元素
-                setTimeout(()=>{
-                    con.removeChild(span); //删除元素
-                    isIn = true; //打开进来的门(可以使用出去的方法)
-                },500)
-            }
-        })
-    </script>
-</body>
 </html>
